@@ -5,11 +5,14 @@ import {
     HomeMainPageH1,
     HomeMainBlock,
     DiscoverStoriesBlock,
+    FeedsPostBlock
 } from './styledComponents'
 import './index.css'
 
 import Navbar from "../../components/Navbar";
 import StoryBlock from "../../components/StoryBlock";
+import FeedsPost from "../../components/FeedPostBlock";
+import BottomNavBar from "../../components/BottomNavbar";
 
 const storiesArr = [
     {
@@ -45,14 +48,7 @@ const userFeed = [
         profileUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
         postDescription: 'Amazing sunset view! 🌅', // Short description
         postImg: ['https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'],
-        postedAt: '2025-03-30T10:00:00Z',
-    },
-    {
-        userName: 'Jane Smith',
-        profileUrl: 'https://randomuser.me/api/portraits/women/2.jpg',
-        postDescription: 'Meet my new adorable puppy! Just got him home today and he is the cutest little bundle of joy. 🐶❤️', // Medium description
-        postImg: ['https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'],
-        postedAt: '2025-03-29T15:30:00Z',
+        postedAt: '2025-03-30',
     },
     {
         userName: 'Alex Johnson',
@@ -63,7 +59,14 @@ const userFeed = [
             'https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
             'https://images.pexels.com/photos/439302/pexels-photo-439302.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
         ],
-        postedAt: '2025-03-28T18:45:00Z',
+        postedAt: '2025-03-28',
+    },
+    {
+        userName: 'Jane Smith',
+        profileUrl: 'https://randomuser.me/api/portraits/women/2.jpg',
+        postDescription: 'Meet my new adorable puppy! Just got him home today and he is the cutest little bundle of joy. 🐶❤️', // Medium description
+        postImg: ['https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'],
+        postedAt: '2025-03-29',
     }
 ];
 
@@ -75,16 +78,24 @@ class HomePage extends Component {
         return (
             <HomeMainPage>
                 <Navbar />
+                <BottomNavBar />
                 <HomeMainBlock>
                     <HomeMainPageH1> Discover </HomeMainPageH1>
                     <DiscoverStoriesBlock className="discover-stories-block">
                         {
                             storiesArr.map(each => (
-                                <StoryBlock storyDetails = {each} />
+                                <StoryBlock storyDetails = {each} key = {each.profileImg} />
                             ))
                         }
                     </DiscoverStoriesBlock>
                     <HomeMainPageH1> Recently Post </HomeMainPageH1>
+                    <FeedsPostBlock>
+                        {
+                            userFeed.map(each => (
+                                <FeedsPost postDetails = {each} key = {each.userName} />
+                            ))
+                        }
+                    </FeedsPostBlock>
                 </HomeMainBlock>
             </HomeMainPage>
         )

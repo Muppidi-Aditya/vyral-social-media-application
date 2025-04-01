@@ -35,8 +35,8 @@ export const PlusInnerBox = styled.div`
 `
 
 export const FriendUserImg = styled.img`
-    height: 35px;
-    width: 35px;
+    height: 100%;
+    width: 100%;
     border-radius: 50%;
 `
 
@@ -50,4 +50,5 @@ export const FriendUserImgOuterBlock = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1.8px;
 `
