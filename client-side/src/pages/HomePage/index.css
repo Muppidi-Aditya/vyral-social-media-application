@@ -5,4 +5,8 @@
 
 .discover-stories-block::-webkit-scrollbar {
     display: none;
-  }
+}
+
+.temp {
+  color: green;
+}

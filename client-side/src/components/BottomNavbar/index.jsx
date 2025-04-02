@@ -11,7 +11,8 @@ import {
     BottomNavBarMenuItem
 } from './styledComponents'
 
-const BottomNavBar = () => {
+const BottomNavBar = props => {
+    const {page} = props;
     return (
         <BottomNavBarBlock>
             <BottomNavbarFirstHalf>
@@ -19,17 +20,19 @@ const BottomNavBar = () => {
                     <BottomNavBarMenuItem>
                         <GoHomeFill style = {{
                             fontSize: '28px',
-                            color: '#48A6A7'
+                            color: page === 'home' ? '#48A6A7' : 'inherit'
                         }} />
                     </BottomNavBarMenuItem>
                     <BottomNavBarMenuItem>
                         <GoSearch style = {{
-                            fontSize: '28px'
+                            fontSize: '28px',
+                            color: page === 'search' ? '#48A6A7' : 'inherit'
                         }}/>
                     </BottomNavBarMenuItem>
                     <BottomNavBarMenuItem>
                         <IoVideocam style = {{
-                            fontSize: '28px'
+                            fontSize: '28px',
+                            color: page === 'video' ? '#48A6A7' : 'inherit'
                         }}/>
                     </BottomNavBarMenuItem>
                 </BottomNavBarMenuItems>

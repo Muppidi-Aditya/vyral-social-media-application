@@ -8,7 +8,7 @@ export const PostBlock = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding-bottom: 35px;
 `;
 
 export const PostHeader = styled.div`
@@ -66,18 +66,22 @@ export const PostPhotoContainer = styled.div`
 
   .slick-slide > div {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8a826;
   }
 `;
 
 export const PostPhoto = styled.img`
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const CarouselIndicators = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: -20px;
   left: 0;
   right: 0;
   display: flex;

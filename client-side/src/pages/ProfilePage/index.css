@@ -1,0 +1,8 @@
+.self-stories-block {
+    scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.self-stories-block::-webkit-scrollbar {
+    display: none;
+  }

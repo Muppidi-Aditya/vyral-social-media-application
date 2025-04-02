@@ -70,15 +70,12 @@ const userFeed = [
     }
 ];
 
-console.log(userFeed);
-
-
 class HomePage extends Component {
     render () {
         return (
             <HomeMainPage>
                 <Navbar />
-                <BottomNavBar />
+                <BottomNavBar page='home' />
                 <HomeMainBlock>
                     <HomeMainPageH1> Discover </HomeMainPageH1>
                     <DiscoverStoriesBlock className="discover-stories-block">
