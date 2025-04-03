@@ -5,9 +5,7 @@ export const ProfileMainPage = styled.div`
     width: 100vw;
     padding-top: 10px;
     background-image: linear-gradient(#48A6A7, #F2EFE7, white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-bottom: 20px;
 `
 
 export const ProfileBlock = styled.div`
@@ -75,16 +73,6 @@ export const ProfileSelfStoriesBlock = styled.div`
     padding-right: 20px;
 `
 
-export const SelfStoryBlock = styled.div`
-    height: 140px;
-    width: 110px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-image: url(${props => props.backgroundImgLink});
-    background-size: cover;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-`
-
 export const AllPostsStoriesToggleBlock = styled.div`
     height: 80px;
     width: 100%;
@@ -109,4 +97,21 @@ export const PostStoryBtn = styled.div`
     & > p {
         font-family: "Poppins", sans-serif;
     }
+`
+
+export const UserReelsBlock = styled.div`
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+`
+
+export const UserReel = styled.div`
+    height: 240px;
+    width: calc((100vw - 64px)/3);
+    background-image: url(${props => props.backgroundImgLink});
+    background-size: cover;
+    border-radius: 10px;
 `
